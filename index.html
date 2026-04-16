@@ -45,6 +45,10 @@
       "postalCode": "521001",
       "addressCountry": "IN"
     },
+    "sameAs": [
+      "https://www.google.com/maps/place/Vaibhavam+Vididhillu+Machilipatnam",
+      "https://www.facebook.com/vaibhavam.vididhillu"
+    ],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 16.1834,
@@ -71,8 +75,16 @@
       {"@type": "LocationFeatureSpecification", "name": "Generator Backup", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Balcony", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "City View", "value": true}
-    ]
+      {"@type": "LocationFeatureSpecification", "name": "City View", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Near Railway Station", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Close to Beach & Local Attractions", "value": true}
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": 20,
+      "bestRating": "5"
+    }
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,6 +126,7 @@
     }
     #navbar.scrolled { box-shadow: 0 4px 24px rgba(11, 37, 69, 0.06); }
     .nav-brand { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: 0.05em; }
+    .nav-brand img { height: 40px; width: auto; }
     .nav-brand-tel { font-family: var(--telugu); font-size: 14px; color: var(--gold); font-weight: 600; letter-spacing: normal; }
     .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 600; color: var(--text-soft); text-decoration: none; padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid transparent; }
@@ -138,7 +151,7 @@
     .container { max-width: 1200px; margin: 0 auto; }
     .s-label { font-size: 12px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: inline-block; }
     .s-title { font-family: var(--serif); font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: var(--text-main); line-height: 1.15; margin-bottom: 20px; }
-    .s-desc { font-size: 16px; color: var(--text-soft); max-width: 600px; line-height: 1.8; }
+    .s-desc { font-size: 16px; color: var(--text-soft); max-width: 95%; line-height: 1.8; }
 
     /* ── HERO ── */
     #hero { min-height: 100vh; padding-top: var(--nav-h); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(253, 251, 247, 0.96)), url('assets/images/hero/entrance.png') center/cover no-repeat; }
@@ -148,10 +161,12 @@
     .hero-eyebrow { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; font-weight: 700; }
     .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 60px; height: 1px; background: var(--text-main); opacity: 0.2; }
     
+    .hero-icon { height: 120px; width: auto; margin-bottom: 24px; }
+    
     .hero-title { font-family: var(--serif); font-size: clamp(50px, 8vw, 110px); font-weight: 700; color: var(--text-main); line-height: 1; letter-spacing: 0; margin-bottom: 12px; }
     .hero-title-tel { font-family: var(--telugu); font-size: clamp(20px, 4vw, 34px); font-weight: 600; color: var(--gold); margin-bottom: 30px; }
     
-    .hero-sub { font-size: 18px; color: var(--text-soft); line-height: 1.8; margin-bottom: 48px; max-width: 600px; }
+    .hero-sub { font-size: 18px; color: var(--text-soft); line-height: 1.8; margin-bottom: 48px; max-width: 95%; }
     
     .hero-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 56px; }
     .badge { background: var(--bg-main); border: 1px solid var(--border); padding: 10px 24px; border-radius: 100px; font-size: 13px; font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(11,37,69,0.03); }
@@ -173,7 +188,7 @@
     
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
     .gitem { border-radius: 8px; box-shadow: 0 8px 30px rgba(11,37,69,0.06); position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 4/3; }
-    .gitem img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .gitem img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); image-rendering: crisp-edges; }
     .gitem:hover img { transform: scale(1.06); }
     .gitem-label { position: absolute; inset: auto 0 0 0; background: linear-gradient(transparent, rgba(11,37,69,0.85)); color: #FFFFFF; padding: 30px 20px 16px; font-size: 14px; font-weight: 500; opacity: 0; transition: opacity 0.4s ease; transform: translateY(10px); }
     .gitem:hover .gitem-label { opacity: 1; transform: translateY(0); }
@@ -192,10 +207,16 @@
 
     /* ── ROOMS ── */
     #rooms { background: var(--bg-main); border-top: 1px solid var(--border); }
-    .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+    .rooms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
+    @supports (width: 1px) {
+      @media (max-width: 800px) {
+        .rooms-grid { grid-template-columns: 1fr; }
+      }
+    }
     .room-card { background: var(--bg-main); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.4s ease; box-shadow: 0 4px 20px rgba(11,37,69,0.04); }
     .room-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(11,37,69,0.08); border-color: var(--gold-dim); }
-    .room-img { width: 100%; height: 220px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+    .room-img { width: 100%; height: 220px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); image-rendering: crisp-edges; cursor: pointer; transition: opacity 0.3s; }
+    .room-img:hover { opacity: 0.85; }
     .room-body { padding: 32px; }
     .room-name { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
     .room-rate { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 20px; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -207,8 +228,8 @@
     #hall { background: var(--bg-card); border-top: 1px solid var(--border); }
     .hall-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; margin-top: 50px; }
     .hall-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .hall-imgs img { width: 100%; border-radius: 8px; object-fit: cover; display: block; box-shadow: 0 8px 24px rgba(11,37,69,0.06); transition: transform 0.4s ease; }
-    .hall-imgs img:hover { transform: scale(1.02); }
+    .hall-imgs img { width: 100%; border-radius: 8px; object-fit: cover; display: block; box-shadow: 0 8px 24px rgba(11,37,69,0.06); transition: transform 0.4s ease, opacity 0.3s; cursor: pointer; }
+    .hall-imgs img:hover { transform: scale(1.02); opacity: 0.85; }
     .hall-imgs .tall { grid-column: 1; grid-row: 1 / 3; height: 380px; }
     .hall-imgs .short { height: 182px; }
     .hall-price { display: inline-block; background: var(--bg-main); border: 1px solid var(--border); border-radius: 8px; padding: 24px 36px; margin: 32px 0; box-shadow: 0 4px 15px rgba(11,37,69,0.03); }
@@ -232,12 +253,15 @@
     .aitem-title { font-weight: 700; font-size: 16px; color: var(--text-main); margin-bottom: 6px; }
     .aitem-desc { font-size: 14px; color: var(--text-soft); line-height: 1.7; }
     .lift-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .lift-imgs img { width: 100%; border-radius: 8px; object-fit: cover; height: 280px; display: block; box-shadow: 0 8px 25px rgba(11,37,69,0.05); }
+    .lift-imgs img { width: 100%; border-radius: 8px; object-fit: cover; height: 280px; display: block; box-shadow: 0 8px 25px rgba(11,37,69,0.05); image-rendering: crisp-edges; cursor: pointer; transition: opacity 0.3s; }
+    .lift-imgs img:hover { opacity: 0.85; }
 
     /* ── VIEWS ── */
     #views { background: var(--bg-card); border-top: 1px solid var(--border); }
-    .views-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin-top: 40px; height: 420px; }
-    .views-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; transition: transform 0.5s ease; box-shadow: 0 8px 25px rgba(11,37,69,0.05); }
+    .views-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .views-grid img { width: 100%; object-fit: cover; display: block; transition: transform 0.5s ease, opacity 0.3s; box-shadow: 0 8px 25px rgba(11,37,69,0.05); border-radius: 8px; image-rendering: crisp-edges; aspect-ratio: 16 / 10; min-height: 260px; cursor: pointer; }
+    .views-grid img:first-child { aspect-ratio: 16 / 10; }
+    .views-grid img:nth-child(2), .views-grid img:nth-child(3) { aspect-ratio: 1 / 1; }
     .views-grid img:hover { transform: scale(1.02); }
 
     /* ── CONTACT ── */
@@ -266,7 +290,8 @@
 
     /* ── FOOTER ── */
     footer { background: #061426; color: rgba(253,251,247,0.7); padding: 70px 5% 40px; text-align: center; }
-    .footer-logo { font-family: var(--serif); font-size: 34px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px; }
+    .footer-logo { display: flex; justify-content: center; margin-bottom: 16px; }
+    .footer-logo img { height: 80px; width: auto; }
     .footer-tel { font-family: var(--telugu); font-size: 14px; color: var(--gold); margin-bottom: 24px; letter-spacing: 0.05em; font-weight: 500; }
     .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
     .footer-links a { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(253,251,247,0.6); text-decoration: none; transition: color 0.3s; font-weight: 600; }
@@ -284,8 +309,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hall-layout, .amenities-grid, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
-      .views-grid { grid-template-columns: 1fr 1fr; height: auto; }
-      .views-grid img:first-child { grid-column: 1 / -1; height: 260px; }
+      .views-grid { grid-template-columns: 1fr 1fr; }
+      .views-grid img:first-child { grid-column: 1 / -1; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .float-contact { bottom: 20px; width: 50px; height: 50px; font-size: 20px; }
@@ -293,14 +318,17 @@
       .float-contact.wa { right: 20px; }
       .hero-title { font-size: clamp(44px, 10vw, 84px); }
     }
+    @media (max-width: 800px) {
+      .rooms-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 600px) {
       section { padding: 60px 5%; }
       .hall-imgs { grid-template-columns: 1fr; }
       .hall-imgs .tall { grid-column: 1; grid-row: auto; height: 240px; }
       .hall-features { grid-template-columns: 1fr; }
       .lift-imgs { grid-template-columns: 1fr; }
-      .views-grid { grid-template-columns: 1fr; height: auto; }
-      .views-grid img:first-child { grid-column: 1; height: 220px; }
+      .views-grid { grid-template-columns: 1fr; }
+      .views-grid img { aspect-ratio: 16 / 10; }
       .ccta { font-size: 14px; padding: 16px 20px; }
       .hero-badges { flex-direction: column; align-items: center; }
       #lb-prev, #lb-next { width: 44px; height: 44px; font-size: 30px; }
@@ -334,8 +362,11 @@
 <!-- ── NAV ── -->
 <nav id="navbar">
   <a class="nav-brand" href="#hero">
-    <span>Vaibhavam</span>
-    <span class="nav-brand-tel">వైభవం</span>
+    <img src="assets/vaibhavam-vididhillu-functionhall-machilipatnam-icon.png" alt="Vaibhavam Vididhillu Logo" title="Vaibhavam Vididhillu">
+    <span>
+      <span>Vaibhavam</span>
+      <span class="nav-brand-tel">విడిదిళ్ళు & మినీ ఫంక్షన్ హాల్</span>
+    </span>
   </a>
   <ul class="nav-links">
     <li><a href="#gallery">Gallery</a></li>
@@ -355,7 +386,7 @@
     <p class="hero-eyebrow">Machilipatnam, Andhra Pradesh</p>
     <h1 class="hero-title">Vaibhavam</h1>
     <p class="hero-title-tel">వైభవం విడిదిళ్ళు & మినీ ఫంక్షన్ హాల్</p>
-    <p class="hero-sub">A premium vididhillu (guest house) &amp; Mini function hall in the heart of Machilipatnam — with lift access, AC rooms, city-view balconies, and a spacious event hall.</p>
+    <p class="hero-sub">A premium vididhillu (guest house) &amp; mini function hall in the heart of Machilipatnam - with lift access, AC rooms, and a venue for events & celebrations.</p>
     <div class="hero-badges">
       <span class="badge">3 Fully Furnished Flats</span>
       <span class="badge">Mini Function Hall</span>
@@ -418,66 +449,43 @@
   <div class="container">
     <p class="s-label">Accommodation</p>
     <h2 class="s-title">Our Flats</h2>
-    <p class="s-desc" lang="te">మా విడిది గదులు — విలాసంగా, సౌకర్యంగా</p>
+    <p class="s-desc">All 3 flats are identically designed and constructed for consistent comfort and luxury. Choose a single flat for your stay, or book all three to accommodate larger groups and family gatherings.</p>
     <div class="rooms-grid">
       <article class="room-card" itemscope itemtype="https://schema.org/Accommodation">
-        <img class="room-img" src="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-1-thumb.webp" alt="Flat 1 living room at Vaibhavam Vididhillu Machilipatnam" itemprop="photo" loading="lazy">
+        <img class="room-img" src="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-1-thumb.webp" data-full="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-1.webp" alt="Luxury flat interior at Vaibhavam Vididhillu Machilipatnam" itemprop="photo" loading="lazy" decoding="async" onclick="openLb(this)">
         <div class="room-body">
-          <div class="room-name" itemprop="name">Flat 1 — Floor 1</div>
+          <div class="room-name" itemprop="name">Each Flat</div>
           <div class="room-rate">₹6,000 / night</div>
           <ul class="room-features" itemprop="amenityFeature">
             <li>3 Bedrooms with AC</li>
-            <li>Spacious Hall &amp; Dining</li>
-            <li>LED False Ceiling</li>
-            <li>Marble Flooring</li>
-            <li>Crystal Chandelier</li>
-          </ul>
-        </div>
-      </article>
-      <article class="room-card" itemscope itemtype="https://schema.org/Accommodation">
-        <img class="room-img" src="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-2-thumb.webp" alt="Flat 2 living room at Vaibhavam Vididhillu Machilipatnam" itemprop="photo" loading="lazy">
-        <div class="room-body">
-          <div class="room-name" itemprop="name">Flat 2 — Floor 2</div>
-          <div class="room-rate">₹6,000 / night</div>
-          <ul class="room-features" itemprop="amenityFeature">
-            <li>3 Bedrooms with AC</li>
+            <li>Fully Furnished Living &amp; Dining</li>
             <li>Designer LED Lighting</li>
-            <li>Fully Furnished</li>
-            <li>Attached Bathrooms</li>
+            <li>Marble Flooring &amp; False Ceiling</li>
             <li>Sony Smart TV</li>
-            <li>Balcony with City View</li>
+            <li>Modern Bathrooms with Geysers</li>
           </ul>
         </div>
       </article>
       <article class="room-card" itemscope itemtype="https://schema.org/Accommodation">
-        <img class="room-img" src="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-3-thumb.webp" alt="Flat 3 living room at Vaibhavam Vididhillu Machilipatnam" itemprop="photo" loading="lazy">
+        <img class="room-img" src="assets/images/bed-rooms/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Bedroom-1-thumb.webp" data-full="assets/images/bed-rooms/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Bedroom-1.webp" alt="Book all 3 flats at Vaibhavam Vididhillu for group events" itemprop="photo" loading="lazy" decoding="async" onclick="openLb(this)">
         <div class="room-body">
-          <div class="room-name" itemprop="name">Flat 3 — Floor 3</div>
-          <div class="room-rate">₹6,000 / night</div>
-          <ul class="room-features" itemprop="amenityFeature">
-            <li>3 Bedrooms with AC</li>
-            <li>Premium Marble Finish</li>
-            <li>Modern TV Unit</li>
-            <li>Spacious Balcony</li>
-            <li>Panoramic City Views</li>
-          </ul>
-        </div>
-      </article>
-      <article class="room-card" itemscope itemtype="https://schema.org/Accommodation">
-        <img class="room-img" src="assets/images/bed-rooms/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Bedroom-1-thumb.webp" alt="Book all 3 flats at Vaibhavam Vididhillu for groups" itemprop="photo" loading="lazy">
-        <div class="room-body">
-          <div class="room-name" itemprop="name">All 3 Flats — Best Value</div>
-          <div class="room-rate">Special Group Rates</div>
+          <div class="room-name" itemprop="name">All 3 Flats Together</div>
+          <div class="room-rate">Special Group Rate</div>
           <ul class="room-features">
-            <li>9 AC Bedrooms Total</li>
-            <li>Ideal for Weddings &amp; Functions</li>
+            <li>Total 9 Bedrooms</li>
+            <li>Sleeps 20+ Guests</li>
+            <li>Ideal for Weddings &amp; Events</li>
             <li>Combine with Mini Function Hall</li>
-            <li>Whole Premises Available</li>
+            <li>Full Premises Exclusivity</li>
             <li>Flexible Check-in / Check-out</li>
-            <li>Lift Access Across All Floors</li>
           </ul>
         </div>
       </article>
+    </div>
+    
+    <div style="margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--border);">
+      <p class="s-label">Optional Add-ons</p>
+      <p class="s-desc" style="max-width: 800px;">Enhance your experience with additional services available at extra cost. Extra mattresses: ₹300 per piece. <br> Extended generator backup: Available on-demand for both stays and events. Contact us for detailed pricing and availability.</p>
     </div>
   </div>
 </section>
@@ -490,9 +498,9 @@
     <p class="s-desc" lang="te">వైభవం ఫంక్షన్ హాల్ — వివాహాలు, వేడుకలు, కార్యక్రమాలకు అనువైన వేదిక</p>
     <div class="hall-layout">
       <div class="hall-imgs">
-        <img class="tall" src="assets/images/functionhall/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-FunctionEntrance-1-thumb.webp" alt="Vaibhavam function hall spacious interior Machilipatnam" loading="lazy">
-        <img class="short" src="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-1-thumb.webp" alt="Function hall entrance tiled floor Vaibhavam" loading="lazy">
-        <img class="short" src="assets/images/entrance/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-Entrance-1-thumb.webp" alt="Vaibhavam Vididhillu building Machilipatnam" loading="lazy">
+        <img class="tall" src="assets/images/functionhall/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-FunctionEntrance-1-thumb.webp" data-full="assets/images/functionhall/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-FunctionEntrance-1.webp" alt="Vaibhavam function hall spacious interior Machilipatnam" loading="lazy" onclick="openLb(this)">
+        <img class="short" src="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-1-thumb.webp" data-full="assets/images/living-rooms/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-LivingRoom-1.webp" alt="Function hall entrance tiled floor Vaibhavam" loading="lazy" onclick="openLb(this)">
+        <img class="short" src="assets/images/entrance/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-Entrance-1-thumb.webp" data-full="assets/images/entrance/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-Entrance-1.webp" alt="Vaibhavam Vididhillu building Machilipatnam" loading="lazy" onclick="openLb(this)">
       </div>
       <div>
         <div class="hall-price">
@@ -501,11 +509,11 @@
           <div class="hall-price-per">per day</div>
         </div>
         <div class="hall-features">
-          <div class="hfeat"><div class="hfeat-icon">💒</div><div><div class="hfeat-title">Weddings</div><div class="hfeat-desc">Telugu weddings &amp; receptions</div></div></div>
+          <div class="hfeat"><div class="hfeat-icon">💒</div><div><div class="hfeat-title">Weddings</div><div class="hfeat-desc">Weddings &amp; receptions</div></div></div>
           <div class="hfeat"><div class="hfeat-icon">🎉</div><div><div class="hfeat-title">Celebrations</div><div class="hfeat-desc">Birthdays, engagements, namings</div></div></div>
           <div class="hfeat"><div class="hfeat-icon">💼</div><div><div class="hfeat-title">Corporate</div><div class="hfeat-desc">Meetings &amp; conferences</div></div></div>
           <div class="hfeat"><div class="hfeat-icon">🏛️</div><div><div class="hfeat-title">Spacious Hall</div><div class="hfeat-desc">Large gatherings, open layout</div></div></div>
-          <div class="hfeat"><div class="hfeat-icon">⚡</div><div><div class="hfeat-title">Generator</div><div class="hfeat-desc">Uninterrupted power backup</div></div></div>
+          <div class="hfeat"><div class="hfeat-icon">⚡</div><div><div class="hfeat-title">Generator</div><div class="hfeat-desc">Available on-demand at additional cost</div></div></div>
           <div class="hfeat"><div class="hfeat-icon">🚗</div><div><div class="hfeat-title">Parking</div><div class="hfeat-desc">Vehicle parking available</div></div></div>
         </div>
       </div>
@@ -521,17 +529,19 @@
     <p class="s-desc">From a dedicated lift to spacious balconies with city views — every detail is taken care of at Vaibhavam.</p>
     <div class="amenities-grid">
       <div class="amenity-list">
-        <div class="aitem"><div class="aitem-icon">🛗</div><div><div class="aitem-title">Lift / Elevator</div><div class="aitem-desc">A dedicated lift connects all 4 floors — no stairs required. Convenient for elderly guests and heavy luggage.</div></div></div>
-        <div class="aitem"><div class="aitem-icon">❄️</div><div><div class="aitem-title">Air Conditioning</div><div class="aitem-desc">All bedrooms in every flat are equipped with split AC units for comfortable stays year-round.</div></div></div>
-        <div class="aitem"><div class="aitem-icon">⚡</div><div><div class="aitem-title">Generator Backup</div><div class="aitem-desc">Uninterrupted power supply — your events and stays are never affected by power cuts.</div></div></div>
-        <div class="aitem"><div class="aitem-icon">🏙️</div><div><div class="aitem-title">Balcony &amp; City View</div><div class="aitem-desc">Wide open balconies with stunning views of Machilipatnam. Watch the sunrise and sunset from your flat.</div></div></div>
-        <div class="aitem"><div class="aitem-icon">🔒</div><div><div class="aitem-title">Safe &amp; Secure</div><div class="aitem-desc">Premium security with secure entrance gates and 24/7 availability of on-site staff.</div></div></div>
+        <div class="aitem"><div class="aitem-icon">🛗</div><div><div class="aitem-title">Lift / Elevator Access</div><div class="aitem-desc">Dedicated lift connecting all 4 floors — no stairs required. Convenient for elderly guests and heavy luggage.</div></div></div>
+        <div class="aitem"><div class="aitem-icon">❄️</div><div><div class="aitem-title">3 AC Bedrooms Per Flat</div><div class="aitem-desc">All bedrooms equipped with split AC units for comfortable stays year-round. Adjustable temperature control in each room.</div></div></div>
+        <div class="aitem"><div class="aitem-icon">📺</div><div><div class="aitem-title">Smart TVs</div><div class="aitem-desc">Modern LED/Smart TVs in all bedrooms and living areas for entertainment during your stay. Access to streaming platforms.</div></div></div>
+        <div class="aitem"><div class="aitem-icon">🚿</div><div><div class="aitem-title">Electric Geysers</div><div class="aitem-desc">Hot water geysers in all bathrooms for warm, comfortable showers. Instant hot water on demand.</div></div></div>
+        <div class="aitem"><div class="aitem-icon">⚡</div><div><div class="aitem-title">Generator Backup</div><div class="aitem-desc">Available on-demand at additional cost for both regular stays and events. Ensures uninterrupted power supply during power cuts.</div></div></div>
+        <div class="aitem"><div class="aitem-icon">🏙️</div><div><div class="aitem-title">Spacious Balconies &amp; City Views</div><div class="aitem-desc">Wide open balconies on each flat with stunning panoramic views of Machilipatnam. Watch the sunset.</div></div></div>
+        <div class="aitem"><div class="aitem-icon">🔒</div><div><div class="aitem-title">Safe &amp; Secure</div><div class="aitem-desc">Premium security with gated compound entrance and availability of on-site staff to assist guests.</div></div></div>
       </div>
       <div class="lift-imgs">
-        <img src="assets/images/amenities/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Lift-1-thumb.webp" alt="Lift elevator at Vaibhavam Vididhillu Machilipatnam" style="height:220px" loading="lazy">
-        <img src="assets/images/bed-rooms/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Bedroom-2-thumb.webp" alt="Lift interior at Vaibhavam guest house" style="height:220px" loading="lazy">
-        <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-3-thumb.webp" alt="Spacious covered balcony at Vaibhavam" style="height:220px" loading="lazy">
-        <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-1-thumb.webp" alt="City view from Vaibhavam balcony Machilipatnam" style="height:220px" loading="lazy">
+        <img src="assets/images/amenities/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Lift-1-thumb.webp" data-full="assets/images/amenities/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Lift-1.webp" alt="Lift elevator at Vaibhavam Vididhillu Machilipatnam" style="height:220px" loading="lazy" onclick="openLb(this)">
+        <img src="assets/images/bed-rooms/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Bedroom-2-thumb.webp" data-full="assets/images/bed-rooms/Vaibhavam-Vididhillu-FunctionHall-machilipatnam-Bedroom-2.webp" alt="Lift interior at Vaibhavam guest house" style="height:220px" loading="lazy" onclick="openLb(this)">
+        <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-3-thumb.webp" data-full="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-3.webp" alt="Spacious covered balcony at Vaibhavam" style="height:220px" loading="lazy" onclick="openLb(this)">
+        <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-1-thumb.webp" data-full="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-1.webp" alt="City view from Vaibhavam balcony Machilipatnam" style="height:220px" loading="lazy" onclick="openLb(this)">
       </div>
     </div>
   </div>
@@ -541,11 +551,11 @@
 <section id="views" aria-label="Balcony views from Vaibhavam Machilipatnam">
   <div class="container">
     <p class="s-label">The View</p>
-    <h2 class="s-title" style="color: var(--gold-light);">Machilipatnam at Your Feet</h2>
+    <h2 class="s-title" style="color: var(--gold-light);">Your Window to Machilipatnam</h2>
     <div class="views-grid">
-      <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-1-thumb.webp" alt="Sunset panorama from Vaibhavam Vididhillu rooftop Machilipatnam" loading="lazy">
-      <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-3-thumb.webp" alt="City skyline view from Vaibhavam balcony" loading="lazy">
-      <img src="assets/images/terrace/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-terrace-1-thumb.webp" alt="Green neighbourhood view through window at Vaibhavam" loading="lazy">
+      <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-1-thumb.webp" data-full="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-1.webp" alt="Sunset panorama from Vaibhavam Vididhillu rooftop Machilipatnam" loading="lazy" onclick="openLb(this)">
+      <img src="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-3-thumb.webp" data-full="assets/images/views/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-View-3.webp" alt="City skyline view from Vaibhavam balcony" loading="lazy" onclick="openLb(this)">
+      <img src="assets/images/terrace/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-terrace-1-thumb.webp" data-full="assets/images/terrace/Vaibhavam-Vididhillu-FunctionHall-Machilipatnam-terrace-1.webp" alt="Green neighbourhood view through window at Vaibhavam" loading="lazy" onclick="openLb(this)">
     </div>
   </div>
 </section>
@@ -570,17 +580,81 @@
       </div>
     </div>
 
+    <!-- ══ FAQ ══ -->
+    <div style="margin-top: 80px; padding-top: 80px; border-top: 1px solid var(--border);">
+      <p class="s-label" style="margin-bottom: 20px;">FAQ</p>
+      <h3 style="font-size: 24px; font-weight: 600; color: var(--text); margin-bottom: 40px;">Frequently Asked Questions about Vaibhavam Vididhillu</h3>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+        <!-- FAQ Item 1 -->
+        <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+          <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('span:last-child').style.transform=this.querySelector('span:last-child').style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)'" style="width: 100%; padding: 20px; background: var(--bg-card); border: none; cursor: pointer; text-align: left; font-size: 15px; font-weight: 600; color: var(--text); display: flex; justify-content: space-between; align-items: center;">
+            <span>What is a 'vididhillu' and why choose Vaibhavam Vididhillu?</span>
+            <span style="font-size: 18px; transition: transform 0.2s; display: inline-block;">▼</span>
+          </button>
+          <div style="display: none; padding: 20px; background: #fafafa; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-soft); line-height: 1.8;">
+            Vididhillu represents a place of elegance, cultural richness, and hospitality. Vaibhavam Vididhillu embodies this philosophy by offering premium accommodation and event management services in Machilipatnam, blending modern comfort with traditional warmth and personalized service. <a href="#amenities" style="color: var(--gold); text-decoration: none; font-weight: 600;">Explore our amenities →</a>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+          <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('span:last-child').style.transform=this.querySelector('span:last-child').style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)'" style="width: 100%; padding: 20px; background: var(--bg-card); border: none; cursor: pointer; text-align: left; font-size: 15px; font-weight: 600; color: var(--text); display: flex; justify-content: space-between; align-items: center;">
+            <span>How does the generator backup work?</span>
+            <span style="font-size: 18px; transition: transform 0.2s; display: inline-block;">▼</span>
+          </button>
+          <div style="display: none; padding: 20px; background: #fafafa; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-soft); line-height: 1.8;">
+            Yes! You have flexible booking options: (1) <a href="#rooms" style="color: var(--gold); text-decoration: none; font-weight: 600;">Book 1 flat at ₹6,000/night</a>, (2) Book all 3 flats at ₹18,000/day, (3) <a href="#hall" style="color: var(--gold); text-decoration: none; font-weight: 600;">Book only the mini function hall for ₹10,000/day</a>, or (4) Combine flats + function hall for multi-day celebrations or wedding events. Group rates and customized packages available — contact us with your requirements.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+          <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('span:last-child').style.transform=this.querySelector('span:last-child').style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)'" style="width: 100%; padding: 20px; background: var(--bg-card); border: none; cursor: pointer; text-align: left; font-size: 15px; font-weight: 600; color: var(--text); display: flex; justify-content: space-between; align-items: center;">
+            <span>Can we book flats with the function hall?</span>
+            <span style="font-size: 18px; transition: transform 0.2s; display: inline-block;">▼</span>
+          </button>
+          <div style="display: none; padding: 20px; background: #fafafa; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-soft); line-height: 1.8;">
+            Our generator is available for use upon request for both stays and events. When you need it activated (during power cuts or for extended power needs), simply request our team and we'll switch it on. It's available 24/7 for your convenience. Extended usage at additional cost — <a href="#contact" style="color: var(--gold); text-decoration: none; font-weight: 600;">contact us for pricing</a>.
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+          <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('span:last-child').style.transform=this.querySelector('span:last-child').style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)'" style="width: 100%; padding: 20px; background: var(--bg-card); border: none; cursor: pointer; text-align: left; font-size: 15px; font-weight: 600; color: var(--text); display: flex; justify-content: space-between; align-items: center;">
+            <span>Is parking free, and how many vehicles can we accommodate?</span>
+            <span style="font-size: 18px; transition: transform 0.2s; display: inline-block;">▼</span>
+          </button>
+          <div style="display: none; padding: 20px; background: #fafafa; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-soft); line-height: 1.8;">
+            Yes, parking is completely free for all our guests. We have ample parking space on the property, accommodating multiple vehicles including cars, motorcycles, and bicycles. For large events or group bookings, we can facilitate additional nearby parking arrangements.
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+          <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'; this.querySelector('span:last-child').style.transform=this.querySelector('span:last-child').style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)'" style="width: 100%; padding: 20px; background: var(--bg-card); border: none; cursor: pointer; text-align: left; font-size: 15px; font-weight: 600; color: var(--text); display: flex; justify-content: space-between; align-items: center;">
+            <span>Do you offer extra mattresses, and what are the charges?</span>
+            <span style="font-size: 18px; transition: transform 0.2s; display: inline-block;">▼</span>
+          </button>
+          <div style="display: none; padding: 20px; background: #fafafa; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-soft); line-height: 1.8;">
+            Yes, we provide extra mattresses upon request at ₹500–1,000 per piece, depending on mattress type and quality. This is ideal for accommodating additional guests or children during family stays. Simply inform us at the time of booking or upon arrival.
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="seo-block">
-      <p class="s-label" style="margin-bottom:10px">Vaibhavam Vididhillu — Machilipatnam</p>
-      <p>Looking for the best <strong>function hall in Machilipatnam</strong> or a comfortable <strong>guest house near Machilipatnam</strong>? Vaibhavam Vididhillu (వైభవం విడిదిళ్ళు) offers premium accommodation and event facilities in the heart of Machilipatnam, Andhra Pradesh. Whether you need a <strong>Machilipatnam wedding hall</strong>, a <strong>guest house for family stay</strong>, or an event venue for corporate functions — Vaibhavam is your ideal destination. With a dedicated lift, AC rooms, spacious balconies, city views, and generator backup, we ensure a comfortable and memorable experience. <strong>Call or WhatsApp us to check availability and book today.</strong></p>
+      <p class="s-label" style="margin-bottom:10px">Vaibhavam Vididhillu — Machilipatnam's Premier Guest House & Event Venue</p>
+      <p>Looking for the best <strong>function hall in Machilipatnam</strong> or a comfortable <strong>guest house near Machilipatnam</strong>? Welcome to <strong>Vaibhavam Vididhillu</strong> (వైభవం విడిదిళ్ళు), a premium guest house offering excellence in hospitality and event management in the heart of Machilipatnam, Andhra Pradesh. The term 'vididhillu' represents a place of elegance and cultural richness — and that's exactly what we deliver at Vaibhavam Vididhillu. Whether you're searching for a <strong>Machilipatnam wedding hall</strong>, a sophisticated <strong>guest house for family stays</strong>, or a professional venue for corporate events and celebrations, <strong>Vaibhavam Vididhillu</strong> is your ideal destination. Our three luxury AC flats feature a dedicated lift, spacious balconies with stunning city views, and 24/7 generator backup to ensure uninterrupted comfort. The mini function hall accommodates 80–100 guests for intimate celebrations, corporate meets, or cultural events. We're conveniently located near Machilipatnam railway station and close to beautiful beaches, local temples, shopping areas, and cultural attractions. <strong>Book your stay starting at ₹6,000 per night for a flat or reserve the mini function hall at ₹10,000 per day.</strong> Availability year-round with flexible check-in and checkout options. Perfect for guests seeking authentic vididhillu hospitality with modern amenities, free parking, personalized service, and transparent pricing. From check-in to checkout, we deliver excellence. <strong>Call or WhatsApp +91-9398540257 to book your stay or event at Vaibhavam Vididhillu today.</strong></p>
       <br>
-      <p lang="te" style="margin-top: 0;">మచిలీపట్నంలో ఉత్తమ ఫంక్షన్ హాల్ మరియు గెస్ట్ హౌస్ — వైభవం విడిదిళ్ళు. లిఫ్ట్ సౌకర్యంతో కూడిన లక్జరీ ఫ్లాట్‌లు. వివాహాలు, నిశ్చితార్థాలు మరియు అన్ని వేడుకలకు సంపూర్ణ సేవలు.</p>
+      <p lang="te" style="margin-top: 0;">మచిలీపట్నంలో ఉత్తమ ఫంక్షన్ హాల్ మరియు గెస్ట్ హౌస్ — వైభవం విడిదిళ్ళు. విడిదిళ్ళు సంస్కృతి మరియు సమృద్ధిని సూచిస్తుంది. లిఫ్ట్ సౌకర్యంతో కూడిన లక్జరీ ఫ్లాట్‌లు, మిని ఫంక్షన్ హాల్, జనరేటర్ బ్యాకప్. వివాహాలు, నిశ్చితార్థాలు, కార్పోరేట్ ఈవెంట్‌లకు సంపూర్ణ సేవలు. 24/7 సందర్శకుల కోసం ఓపెన్. +91-9398540257కు కాల్ చేయండి.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-logo">Vaibhavam</div>
+  <div class="footer-logo">
+    <img src="assets/vaibhavam-vididhillu-functionhall-machilipatnam-icon.png" alt="Vaibhavam Vididhillu Logo" title="Vaibhavam Vididhillu">
+  </div>
   <div class="footer-tel" lang="te">వైభవం విడిదిళ్ళు · మచిలీపట్నం</div>
   <div class="footer-links">
     <a href="#hero">Home</a>
@@ -623,11 +697,14 @@
   // Lightbox
   let allImgs = [], lbIdx = 0;
   function buildLbList() {
-    allImgs = [...document.querySelectorAll('.gitem.visible img')];
+    allImgs = [...document.querySelectorAll('img[data-full]')];
   }
   function openLb(el) {
     buildLbList();
-    const img = el.querySelector('img');
+    let img = el;
+    if (el.tagName !== 'IMG') {
+      img = el.querySelector('img');
+    }
     lbIdx = allImgs.indexOf(img);
     showLb();
     document.getElementById('lightbox').classList.add('open');
