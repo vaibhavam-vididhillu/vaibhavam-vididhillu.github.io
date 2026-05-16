@@ -120,7 +120,8 @@
     
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--body); background: var(--bg-main); color: var(--text-main); overflow-x: hidden; }
+    body { font-family: var(--body); background: var(--bg-main); color: var(--text-main); overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+    a, button { -webkit-tap-highlight-color: transparent; outline: none; }
 
     /* ── STICKY NAV ── */
     #navbar {
